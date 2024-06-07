@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Автозапчасти</title>
+<style>
+  /* Стили, скопированные из каталога товаров */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  /* Стили для форм входа и регистрации */
+  .auth-form {
+    background-color: #fff;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .auth-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .auth-form input,
+  .auth-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box; /* Добавляет паддинг в общую ширину элемента */
+  }
+  .auth-form button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  .auth-form button:hover {
+    background-color: #4cae4c;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Магазин автозапчастей</h1>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="catalog.html">Каталог запчастей</a></li>
+    <li><a href="cart.html">Корзина</a></li>
+  </ul>
+</nav>
+
+<!-- Форма авторизации -->
+<div class="auth-form">
+  <h2>Вход</h2>
+  <input type="text" id="username" placeholder="Логин">
+  <input type="password" id="password" placeholder="Пароль">
+  <button type="button" onclick="login()">Войти</button>
+</div>
+
+<!-- Форма регистрации -->
+<div class="auth-form">
+  <h2>Регистрация</h2>
+  <input type="text" id="new-login" placeholder="Логин">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="new-password" placeholder="Пароль">
+  <button type="button">Зарегистрироваться</button>
+</div>
+
+<script>
+// Функция login из вашего предыдущего кода
+function login() {
+  var username = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
+
+  // Получаем данные пользователя из localStorage
+  var storedUsername = localStorage.getItem('username');
+  var storedPassword = localStorage.getItem('password');
+
+  // Проверяем совпадение введенных данных с данными из localStorage
+  if(username === storedUsername && password === storedPassword) {
+    alert('Вы успешно вошли в систему!');
+    // Перенаправление на профиль пользователя или другую страницу
+    // window.location.href = 'profile.html';
+  } else {
+    alert('Неверное имя пользователя или пароль. Попробуйте снова.');
+  }
+}
+</script>
+
+</body>
+</html>
